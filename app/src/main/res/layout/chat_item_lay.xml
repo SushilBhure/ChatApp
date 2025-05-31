@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="5dp">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/round_corner_bg"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="8sp"
+        android:text="Today"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_msg_outgoing"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:layout_gravity="end"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:text="hi, how are you?"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_msg_incoming"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:layout_gravity="start"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="I am good, how are you?"/>
+
+</LinearLayout>

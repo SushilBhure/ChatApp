@@ -9,4 +9,22 @@
     </style>
 
     <style name="Theme.ChatApp" parent="Base.Theme.ChatApp" />
+
+    <style name="CircleImageViewStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="TextInputHintStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/colorPrimary</item> <!-- Focused color -->
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BottomNavActiveIndicator1" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorBackground">@color/white</item> <!-- This is the highlighter -->
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
 </resources>
