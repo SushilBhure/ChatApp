@@ -1,7 +1,8 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("android") version "2.1.0"
+    id("com.android.application")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
     kotlin("kapt")
 
 }
@@ -18,6 +19,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -49,6 +54,12 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    //circular-Imageview
+    implementation(libs.circleimageview)
+
+    //Glide
+    implementation(libs.glide)
+
     // life-cycle
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
@@ -69,4 +80,12 @@ dependencies {
     // navigation-component
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    //Firebase-auth
+    implementation(libs.firebase.auth)
+
+    //Firebase-firestore
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore.ktx)
+
 }

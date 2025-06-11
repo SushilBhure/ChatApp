@@ -25,7 +25,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="ChatApp"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="27sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -63,6 +63,7 @@
             android:gravity="end">
 
             <ImageView
+                android:id="@+id/btnMore"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
                 android:layout_gravity="center_vertical"
@@ -87,6 +88,7 @@
         app:queryHint="Search..." />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerUsers"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="12dp"
@@ -99,7 +101,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_view"
         app:layout_constraintVertical_bias="0.0"
-        tools:itemCount="10"
-        tools:listitem="@layout/user_chat_row_lay" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

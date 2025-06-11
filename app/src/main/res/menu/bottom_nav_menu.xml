@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/chatFragment"
         android:icon="@drawable/chat_icon"
         android:title="Chats" />
     <item
-        android:id="@+id/searchFragment"
+        android:id="@+id/statusFragment"
         android:icon="@drawable/status_icon"
         android:title="Updates" />
     <item

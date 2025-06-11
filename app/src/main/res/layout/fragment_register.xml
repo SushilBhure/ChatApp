@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.RegisterFragment">
 
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/circularImage"
         android:layout_width="145dp"
         android:layout_height="145dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/profile_pic_icon"
+        android:src="@drawable/round_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         app:shapeAppearanceOverlay="@style/CircleImageViewStyle" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -31,15 +31,18 @@
         android:fontFamily="sans-serif-medium"
         android:textStyle="bold"
         android:text="Next"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/layLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:id="@+id/layLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,13 +70,13 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/edtImg"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
         android:src="@drawable/addpic_icon"
         app:layout_constraintBottom_toBottomOf="@+id/circularImage"
         app:layout_constraintEnd_toEndOf="@+id/circularImage"
-        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/circularImage" />
 
     <LinearLayout
@@ -117,6 +120,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -184,6 +188,7 @@
                     android:textSize="15sp" />
 
             <EditText
+                android:id="@+id/editTextPhone"
                 android:layout_width="match_parent"
                 android:layout_marginStart="2dp"
                 android:layout_height="wrap_content"
@@ -200,6 +205,16 @@
 
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

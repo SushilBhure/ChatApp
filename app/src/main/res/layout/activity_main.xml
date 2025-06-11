@@ -15,10 +15,11 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph" />
 
+
+
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         app:itemIconTint="@color/white"
