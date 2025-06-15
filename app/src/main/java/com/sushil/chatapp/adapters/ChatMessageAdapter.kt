@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.sushil.chatapp.R
 import com.sushil.chatapp.databinding.ChatItemLayBinding
 import com.sushil.chatapp.models.Message
 import com.sushil.chatapp.utils.DateTimeUtils
@@ -37,13 +38,20 @@ class ChatMessageAdapter(val currentUserID: String) : ListAdapter<Message, ChatM
             }
 
             if(message.senderId==currentUserID){
-                binding.txtFrndMsg.visibility = View.GONE
-                binding.txtMyMsg.visibility = View.VISIBLE
+                binding.layMyMsg.visibility = View.VISIBLE
+                binding.layFrndMsg.visibility = View.GONE
                 binding.txtMyMsg.text = message.message
+                binding.txtMyTime.text = DateTimeUtils.formatTimestampToTime(message.timestamp)
+                if (message.haveSeen){
+                    binding.viewSeen.setBackgroundResource(R.drawable.double_check_seen)
+                }else{
+                    binding.viewSeen.setBackgroundResource(R.drawable.check_double_unseen)
+                }
             }else{
-                binding.txtFrndMsg.visibility = View.VISIBLE
-                binding.txtMyMsg.visibility = View.GONE
+                binding.layMyMsg.visibility = View.GONE
+                binding.layFrndMsg.visibility = View.VISIBLE
                 binding.txtFrndMsg.text = message.message
+                binding.txtFrndTime.text = DateTimeUtils.formatTimestampToTime(message.timestamp)
             }
 
         }

@@ -35,4 +35,10 @@ object DateTimeUtils {
         return isSameDay(yesterday, messageTime)
     }
 
+    fun formatTimestampToTime(timestamp: Long): String {
+        val date = Date(timestamp)
+        val sdf = SimpleDateFormat("h:mm a", Locale.getDefault())
+        return sdf.format(date)
+    }
+
 }
