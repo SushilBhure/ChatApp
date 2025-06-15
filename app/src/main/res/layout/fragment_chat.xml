@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ChatFragment">
+    tools:context=".ui.fragments.FriendsFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -73,33 +74,45 @@
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_input_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="18dp"
-        android:background="@drawable/round_corner_bg"
-        app:iconifiedByDefault="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:queryHint="Search..." />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:enabled="false"
+            android:focusable="false"
+            android:layout_height="50dp"
+            android:drawablePadding="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="Search..."
+            android:background="@drawable/round_corner_bg"
+            android:inputType="text"
+            android:drawableStart="@drawable/search_icon" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerUsers"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginHorizontal="13dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:layout_constraintTop_toBottomOf="@+id/search_input_layout"
         app:layout_constraintVertical_bias="0.0"
         />
 

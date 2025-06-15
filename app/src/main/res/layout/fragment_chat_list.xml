@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DEDEDE"
-    tools:context=".ui.fragments.ChatListFragment">
+    tools:context=".ui.fragments.ChatsFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="6dp"
-        android:paddingVertical="10dp"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="7dp"
         android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,21 +38,20 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.12"
-            android:paddingStart="5dp"
+            android:layout_weight="0.14"
             android:gravity="center">
 
             <ImageView
                 android:id="@+id/frndProfileImg"
-                android:layout_width="43dp"
-                android:layout_height="43dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/round_profile" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.52"
+            android:layout_weight="0.50"
             android:layout_height="match_parent"
             android:paddingStart="8dp"
             android:gravity="center_vertical"
@@ -66,7 +65,7 @@
                 android:ellipsize="marquee"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="sans-serif-medium"
-                android:text="Sushil Bhure"
+                android:text="Loading..."
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -76,12 +75,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:layout_marginTop="2dp"
                 android:ellipsize="marquee"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="sans-serif-medium"
-                android:text="Online"
-                android:textColor="@color/colorPrimary"
-                android:textSize="8sp"
+                android:text="Offline"
+                android:textColor="#636363"
+                android:textSize="10sp"
                 android:textStyle="bold" />
 
 
@@ -141,8 +141,8 @@
         android:layout_height="wrap_content"
         android:background="#EEEEEE"
         android:orientation="horizontal"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="15dp"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -158,11 +158,14 @@
             android:paddingEnd="8dp">
 
             <EditText
+                android:id="@+id/edtTypeMsg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:hint="Type here.."
+                android:backgroundTint="@color/black"
                 android:textColor="@color/black"
+                android:textColorHint="@color/light_black"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -175,6 +178,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/btnSend"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/round_bg_blue"

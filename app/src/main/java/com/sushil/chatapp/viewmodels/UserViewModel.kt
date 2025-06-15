@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.sushil.chatapp.models.Friend
 import com.sushil.chatapp.models.User
 import com.sushil.chatapp.repository.UserRepository
 import kotlinx.coroutines.async
@@ -18,6 +19,13 @@ class UserViewModel : ViewModel() {
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> get() = _error
+
+    // Or directly expose repository LiveData
+    lateinit var friendsList: LiveData<List<Friend>>
+
+    fun loadFriendList(currentUserId: String) {
+        friendsList = repository.getFriendListLiveData(currentUserId)
+    }
 
 
     fun updateUserStatus(currentUserID: String, status: Boolean) {
@@ -38,7 +46,7 @@ class UserViewModel : ViewModel() {
         }
     }
 
-    fun getUser(number: String) {
+    /*fun getUser(number: String) {
         viewModelScope.launch {
             try {
                 _user.value = repository.getUser(number)
@@ -46,11 +54,12 @@ class UserViewModel : ViewModel() {
                 _error.value = e.message
             }
         }
-    }
-
-   /* fun getUser(number: String): LiveData<User?> {
-        return repository.getUserLiveData(number)
     }*/
+
+
+    fun getUser(number: String): LiveData<User?> {
+        return repository.getUserLiveData(number)
+    }
 
      suspend fun isUserRegistered(number: String): Boolean {
 

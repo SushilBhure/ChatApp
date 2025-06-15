@@ -7,6 +7,8 @@
     android:paddingVertical="5dp">
 
     <TextView
+        android:id="@+id/txtDate"
+        android:visibility="visible"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:background="@drawable/round_corner_bg"
@@ -21,7 +23,8 @@
         android:text="Today"/>
 
     <TextView
-
+        android:visibility="visible"
+        android:id="@+id/txtMyMsg"
         android:layout_width="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/bg_msg_outgoing"
@@ -35,6 +38,8 @@
         android:text="hi, how are you?"/>
 
     <TextView
+        android:id="@+id/txtFrndMsg"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/bg_msg_incoming"

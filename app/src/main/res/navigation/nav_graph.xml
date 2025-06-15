@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.sushil.chatapp.ui.fragments.ChatFragment"
+        android:name="com.sushil.chatapp.ui.fragments.FriendsFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/chatListFragment"
-        android:name="com.sushil.chatapp.ui.fragments.ChatListFragment"
+        android:name="com.sushil.chatapp.ui.fragments.ChatsFragment"
         android:label="fragment_chat_list"
         tools:layout="@layout/fragment_chat_list" >
         <argument

@@ -3,16 +3,12 @@ package com.sushil.chatapp.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.addCallback
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
 import com.sushil.chatapp.R
-import com.sushil.chatapp.databinding.FragmentChatListBinding
 import com.sushil.chatapp.databinding.FragmentProfileBinding
 import com.sushil.chatapp.ui.MainActivity
 import com.sushil.chatapp.utils.ImageUtil
@@ -23,13 +19,9 @@ import com.sushil.chatapp.viewmodels.UserViewModel
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
 
-    private val userViewModel: UserViewModel by activityViewModels()
+    private val userViewModel: UserViewModel by viewModels()
 
     private val binding by viewBinding(FragmentProfileBinding::bind)
-
-    private val name =""
-    private val number=""
-    private val imgUrl=""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -60,24 +52,24 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             }
         }
 
-       /* userViewModel.getUser(PrefManager.getUserId(requireActivity()).toString())
+        userViewModel.getUser(PrefManager.getUserId(requireActivity()).toString())
             .observe(viewLifecycleOwner) { user ->
             user?.let {
-                requireActivity().showToast("view model called..")
+              //  requireActivity().showToast("view model called..")
                 ImageUtil.loadBase64IntoImageView(it.profileImageUrl,binding.profileImageView)
                 binding.edtName.setText(it.name)
                 binding.txtNumber.text = "+91 ${it.number}"
             }
-        }*/
+        }
 
-        userViewModel.getUser(PrefManager.getUserId(requireActivity()).toString())
+       /* userViewModel.getUser(PrefManager.getUserId(requireActivity()).toString())
         userViewModel.user.observe(viewLifecycleOwner) {
             if(it!=null){
                 ImageUtil.loadBase64IntoImageView(it.profileImageUrl,binding.profileImageView)
                 binding.edtName.setText(it.name)
                 binding.txtNumber.text = "+91 ${it.number}"
             }
-        }
+        }*/
 
         binding.layEdtName.setOnClickListener({
             if(binding.edtName.isEnabled){
